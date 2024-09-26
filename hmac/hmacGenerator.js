@@ -1,6 +1,6 @@
 import { randomBytes, createHmac } from "crypto";
 
-export class HMACGenerator {
+class HMACGenerator {
   static generateKey = () => randomBytes(32);
   static generateHMAC = (key, message) => {
     const hmac = createHmac("sha3-256", key);
@@ -8,3 +8,5 @@ export class HMACGenerator {
     return hmac.digest("hex");
   };
 }
+
+export { HMACGenerator };

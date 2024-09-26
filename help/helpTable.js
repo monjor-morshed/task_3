@@ -7,7 +7,7 @@ class HelpTable {
 
     moves.forEach((move) => {
       let results = moves.map((opponentMove) => {
-        const result = rules.winner(move, opponentMove);
+        const result = rules.determineWinner(move, opponentMove);
         return result === "Win" ? "Win" : result === "Draw" ? "Draw" : "Lose";
       });
       table.addRow(move, ...results);
@@ -17,4 +17,4 @@ class HelpTable {
   };
 }
 
-export default HelpTable;
+export { HelpTable };

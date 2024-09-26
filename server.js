@@ -1,4 +1,4 @@
-import Game from "./game/game.js";
+import { Game } from "./game/game.js";
 const main = () => {
   const moves = process.argv.slice(2);
   if (

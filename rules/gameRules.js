@@ -3,21 +3,23 @@ class GameRules {
     this.moves = moves;
   }
 
-  winner = (playerMove, computerMove) => {
-    if (playerMove === computerMove) return "Draw";
-
-    const playerIndex = this.moves.indexOf(playerMove);
-    const computerIndex = this.moves.indexOf(computerMove);
-    const half = Math.floor(this.moves.length / 2);
-
-    if (
-      (playerIndex - computerIndex + this.moves.length) % this.moves.length <=
-      half
-    ) {
-      return "Win";
+  determineWinner(playerMove, computerMove) {
+    if (playerMove === computerMove) {
+      return "draw";
     }
-    return "Lose";
-  };
+
+    const winningMoves = {
+      rock: "scissors",
+      paper: "rock",
+      scissors: "paper",
+    };
+
+    if (winningMoves[playerMove] === computerMove) {
+      return "player";
+    } else {
+      return "computer";
+    }
+  }
 }
 
-export default GameRules;
+export { GameRules };
