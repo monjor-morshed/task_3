@@ -10,7 +10,7 @@ const main = () => {
     console.error(
       "Please provide an odd number of unique. Moves greater than or equal to 3."
     );
-    console.error("Exp: node index.js rock paper scissors");
+    console.error("Exp: node server.js rock paper scissors");
     process.exit(1);
   }
 
