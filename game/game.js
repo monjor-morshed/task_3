@@ -8,7 +8,7 @@ const rl = createInterface({
   output: process.stdout,
 });
 
-class Game {
+export class Game {
   constructor(moves) {
     this.moves = moves;
     this.rules = new GameRules(moves);
@@ -65,5 +65,3 @@ class Game {
     rl.close();
   };
 }
-
-export { Game };

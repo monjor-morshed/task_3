@@ -1,6 +1,6 @@
 import AsciiTable from "ascii-table";
 
-class HelpTable {
+export class HelpTable {
   static displayHelp = (moves, rules) => {
     let table = new AsciiTable("Help Table");
     table.setHeading("v PC/User >", ...moves);
@@ -16,5 +16,3 @@ class HelpTable {
     console.log(table.toString());
   };
 }
-
-export { HelpTable };

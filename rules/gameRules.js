@@ -1,25 +1,21 @@
-class GameRules {
+export class GameRules {
   constructor(moves) {
     this.moves = moves;
   }
 
-  determineWinner(playerMove, computerMove) {
-    if (playerMove === computerMove) {
-      return "draw";
-    }
+  determineWinner = (playerMove, computerMove) => {
+    if (playerMove === computerMove) return "Draw";
 
-    const winningMoves = {
-      rock: "scissors",
-      paper: "rock",
-      scissors: "paper",
-    };
+    const playerIndex = this.moves.indexOf(playerMove);
+    const computerIndex = this.moves.indexOf(computerMove);
+    const half = Math.floor(this.moves.length / 2);
 
-    if (winningMoves[playerMove] === computerMove) {
-      return "player";
-    } else {
-      return "computer";
+    if (
+      (playerIndex - computerIndex + this.moves.length) % this.moves.length <=
+      half
+    ) {
+      return "Lose";
     }
-  }
+    return "Win";
+  };
 }
-
-export { GameRules };

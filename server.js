@@ -1,6 +1,7 @@
 import { Game } from "./game/game.js";
 const main = () => {
   const moves = process.argv.slice(2);
+
   if (
     moves.length < 3 ||
     moves.length % 2 === 0 ||
